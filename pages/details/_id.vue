@@ -1,11 +1,11 @@
 <template>
-  <v-card class="pa-10">
+  <v-card class="pa-6">
     <v-row>
-      <v-col>
-        <v-img :width="450" :src="data.thumbnail"></v-img>
+      <v-col cols="4" lg="4" md="4" sm="12" xs="12">
+        <v-img :width="450" :src="data.thumbnail" class="mb-4"></v-img>
 
-        <div v-for="(item, index) in data" :key="index">
-          <div v-if="!doNotShow.includes(index)" class="pa-4">
+        <div v-for="(item, index) in data" :key="index" class="mb-2">
+          <div v-if="!doNotShow.includes(index)">
             <span class="key_info pa-2"> {{ index }}: </span>
             <span class="value_info ml-5">
               {{ item }}
@@ -14,11 +14,9 @@
         </div>
       </v-col>
 
-      <v-col>
+      <v-col cols="8" lg="8" md="8" sm="12" xs="12">
         <div>
-          <v-btn @click="goToSite(data.game_url)" color="primary">
-            Go to Site
-          </v-btn>
+          <div>{{ data.description }}</div>
         </div>
 
         <div v-if="data.minimum_system_requirements" class="my-10">
@@ -57,6 +55,7 @@ export default {
       doNotShow: [
         "id",
         "thumbnail",
+        "short_description",
         "description",
         "game_url",
         "freetogame_profile_url",

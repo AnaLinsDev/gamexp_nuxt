@@ -25,7 +25,7 @@ export default {
 .title_game {
   margin-top: 30vh !important;
   text-align: center;
-  font-size: 40px !important;
+  font-size: 60px !important;
   opacity: 1 !important;
 }
 
@@ -37,4 +37,5 @@ export default {
 .h-100 {
   max-height: 100% !important;
 }
+
 </style>
