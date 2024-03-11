@@ -2,7 +2,7 @@
   <div>
     <v-card color="transparent" elevation="0" class="d-flex flex-wrap mx-auto">
       <v-col>
-        <div class="title my-14">LIST OF GAMES</div>
+        <div class="title_game my-14">LIST OF GAMES</div>
 
         <v-row align="center" justify="center">
           <div class="my-10">
@@ -13,7 +13,15 @@
         </div>
         </v-row>
 
-        <v-row align="center" justify="center">
+        <v-row v-if="data_by_page.length == 0 && !loading">
+          <div class="title_game">No games found :c </div>
+        </v-row>
+
+        <v-row v-if="data_by_page.length == 0 && loading">
+          <div class="title_game">We are loading the games... </div>
+        </v-row>
+
+        <v-row v-else align="center" justify="center">
           <CardGame
             v-for="(item, index) of data_by_page"
             :key="index"
@@ -21,7 +29,7 @@
             :is-placeholder="loading"
           />
         </v-row>
-        <v-row class="my-14" align="center" justify="center">
+        <v-row v-if="!loading" class="my-14" align="center" justify="center">
           <div class="text-center mx-auto">
             <v-pagination
               v-model="page"
@@ -99,7 +107,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
+.title_game {
   text-align: center;
   font-size: 40px !important;
 }

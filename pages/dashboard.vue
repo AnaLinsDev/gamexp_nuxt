@@ -1,36 +1,28 @@
 <template>
-  <v-card>
-    <LoginForm v-if="isLogin" />
-    <RegisterForm v-else />
-
-    <span v-if="isLogin">
-      Dont have an account yet ? Go to
-      <span @click="changePageType"> Register </span>
-    </span>
-    <span v-else>
-      Already have an account ? Go to
-      <span @click="changePageType"> Login </span>
-    </span>
-  </v-card>
+  <div>
+    <v-card color="transparent" elevation="0" class="d-flex flex-wrap mx-auto">
+      <v-col>
+        <div class="title_game my-14">DASHBOARD</div>
+      </v-col>
+    </v-card>
+  </div>
 </template>
 
 <script>
-
 export default {
-  components: { LoginForm, RegisterForm },
 
   data() {
     return {
-      isLogin: true,
+
     };
   },
 
-  methods: {
-    changePageType() {
-      this.isLogin = !this.isLogin;
-    },
-  },
 };
 </script>
 
-<style></style>
+<style scoped>
+.title_game {
+  text-align: center;
+  font-size: 40px !important;
+}
+</style>

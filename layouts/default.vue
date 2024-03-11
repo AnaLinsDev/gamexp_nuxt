@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app dark class="app">
     <Menu />
     <v-main>
       <v-container>
@@ -8,28 +8,6 @@
     </v-main>
   </v-app>
 </template>
-
-<!-- 
-
-TODO: 
-
-- Menu superior com: 
-    - Home
-    - Lista de games 
-    - Dashboard
-
-- Filtro por: 
-    - category
-
-- Page com detalhes do jogo com uma área para dar a nota e favoritar
-
-- Page com lista de favoritos
-
-- Page de Error personalizada
-
-- Add footer com nossa info
-
--->
 
 <script>
 import Menu from "@/components/Common/Menu.vue";
@@ -44,3 +22,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.app {
+  font-family: "Pixelify Sans", sans-serif !important;
+  font-optical-sizing: auto;
+}
+</style>

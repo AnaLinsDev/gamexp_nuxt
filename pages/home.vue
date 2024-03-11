@@ -8,7 +8,7 @@
     >
       <v-col>
         <v-card class="cardTitle">
-          <div class="title py-10">GAME XP APP</div>
+          <div class="title_game py-10">GAME XP APP</div>
         </v-card>
       </v-col>
     </v-card>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.title {
+.title_game {
   margin-top: 30vh !important;
   text-align: center;
   font-size: 40px !important;

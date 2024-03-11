@@ -20,7 +20,13 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap",
+      },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.png" },
+    ],
   },
 
   css: [],
@@ -38,7 +44,7 @@ export default {
   },
 
   proxy: {
-    "/api/": "https://www.freetogame.com/"
+    "/api/": "http://localhost:8000/",
   },
 
   vuetify: {
