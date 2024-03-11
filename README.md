@@ -11,7 +11,7 @@ This project was created to practice some Vuetify, Vuex and Nuxt concepts.
 
 ## Developers
 
-- **Backend**: https://github.com/8b1tz](https://github.com/8b1tz/gamexp
+- **Backend**: https://github.com/8b1tz/gamexp
 - **Frontend**: https://github.com/AnaLinsDev/gamexp_nuxt
 
 
