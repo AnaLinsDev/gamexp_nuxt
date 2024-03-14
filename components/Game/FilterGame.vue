@@ -1,10 +1,19 @@
 <template>
   <v-dialog v-model="dialog" persistent max-width="800px">
     <template v-slot:activator="{ on, attrs }">
-      <v-btn color="transparent" dark v-bind="attrs" v-on="on" elevation="0">
-        <v-icon class="mr-2"> mdi-filter-outline </v-icon>
+      <span
+        @mouseover="hover = true"
+        @mouseout="hover = false"
+        class="d-flex pa-2"
+        :class="!hover || 'filter_link'"
+        v-bind="attrs"
+        v-on="on"
+      >
+        <v-icon :color="hover ? 'rgb(157, 241, 190)' : 'white'" class="mr-2">
+          mdi-filter-outline
+        </v-icon>
         <div>Filter</div>
-      </v-btn>
+      </span>
     </template>
     <v-card class="pa-6">
       <div class="d-flex mx-4">
@@ -83,6 +92,7 @@ export default {
   data() {
     return {
       dialog: false,
+      hover: false,
 
       categories: [],
       publishers: [],
@@ -139,7 +149,7 @@ export default {
     ]),
 
     closeModal() {
-      this.dialog = false
+      this.dialog = false;
     },
 
     cleanFilter() {
@@ -148,7 +158,7 @@ export default {
       this.selectPlataform = "";
       this.selectDeveloper = "";
       this.selectYear = null;
-      this.filterData()
+      this.filterData();
     },
 
     filterData() {
@@ -161,7 +171,7 @@ export default {
       filter = this.mountFilter(filter, "year", this.selectYear);
 
       this.$emit("filter", filter);
-      this.closeModal()
+      this.closeModal();
     },
 
     mountFilter(currentString, currentType, currentValue) {
@@ -175,9 +185,8 @@ export default {
 </script>
 
 <style scoped>
-.title_game {
-  text-align: center;
-  font-size: 30px !important;
+.filter_link {
+  cursor: pointer;
+  color: rgb(157, 241, 190);
 }
 </style>
-

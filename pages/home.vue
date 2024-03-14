@@ -33,9 +33,7 @@ export default {
   height: calc(100vh - 100px);
 }
 
-
 .h-100 {
   max-height: 100% !important;
 }
-
 </style>

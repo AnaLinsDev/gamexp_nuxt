@@ -5,7 +5,7 @@
         <div class="title_game my-14">LIST OF GAMES</div>
 
         <v-row align="center" justify="center">
-          <div class="my-10">
+          <div class="mb-10">
           <v-row>
             <v-spacer></v-spacer>
             <FilterGame :genres="genres" @filter="povoateGames" /> 
@@ -14,7 +14,7 @@
         </v-row>
 
         <v-row v-if="data_by_page.length == 0 && !loading">
-          <div class="title_game">No games found :c </div>
+          <div class="title_game">No games found :\ </div>
         </v-row>
 
         <v-row v-if="data_by_page.length == 0 && loading">
@@ -69,26 +69,17 @@ export default {
   methods: {
     ...mapActions("game", ["getGame"]),
 
-    povoateFilters(allGames) {
-      for (var prop of allGames) {
-        if (!this.genres.includes(prop.genre)) {
-          this.genres.push(prop.genre);
-        }
-      }
-    },
-
     povoateGames(genres) {
       this.loading = true;
 
       this.getGame(genres)
         .then((resp) => {
           this.data = [...resp];
+          this.page = 1;
           this.quant_page = Math.ceil(this.data.length / this.page_size);
         })
         .finally(() => {
           this.loading = false;
-
-          this.povoateFilters(this.data);
         });
     },
   },
@@ -106,9 +97,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.title_game {
-  text-align: center;
-  font-size: 40px !important;
-}
-</style>

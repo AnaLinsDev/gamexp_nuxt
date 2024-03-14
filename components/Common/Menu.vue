@@ -1,15 +1,30 @@
 <template>
   <v-app-bar absolute color="dray darken-4" dark elevation="0">
-    <v-btn elevation="0" height="100%" @click="goTo(enumRoutes.HOME)">
+    <span
+      class="link_menu"
+      elevation="0"
+      height="100%"
+      @click="goTo(enumRoutes.HOME)"
+    >
       Home
-    </v-btn>
+    </span>
     <v-spacer></v-spacer>
-    <v-btn elevation="0" height="100%" @click="goTo(enumRoutes.GAMES)">
+    <span
+      class="link_menu"
+      elevation="0"
+      height="100%"
+      @click="goTo(enumRoutes.GAMES)"
+    >
       Games
-    </v-btn>
-    <v-btn elevation="0" height="100%" @click="goTo(enumRoutes.STATISTICS)">
+    </span>
+    <span
+      class="link_menu"
+      elevation="0"
+      height="100%"
+      @click="goTo(enumRoutes.STATISTICS)"
+    >
       Dashboard
-    </v-btn>
+    </span>
   </v-app-bar>
 </template>
 
@@ -32,4 +47,14 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.link_menu {
+padding: 30px;
+}
+
+.link_menu:hover {
+cursor: pointer;
+color: rgb(157, 241, 190);
+}
+
+</style>

@@ -45,6 +45,12 @@ export default {
       headers: getHeaders(),
     });
   },
+
+  getStatistics() {
+    return this.$axios.$get(`/api/statistics`, {
+      headers: getHeaders(),
+    });
+  },
 };
 
 const getHeaders = () => {
